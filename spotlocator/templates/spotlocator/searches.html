@@ -1,0 +1,49 @@
+{% load static %}
+{% if search_list %}
+    {% for search in search_list %}
+    <div class="col-md-3"><a href="#">
+        <div class="product-box mb-xl-20">
+            <div class="product-img">
+                <a href="{% url 'menu_list' %}"><img src="{{ search.logo.url }}" class="img-logo full-width" alt="product-img"></a>
+              <!--  <div class="overlay">
+                    <div class="product-tags padding-10">
+                        <span class="circle-tag">
+                            <img src="{% static 'spotlocator/assets/img/svg/013-heart-1.svg' %}" alt="tag">
+                        </span>
+                        <div class="custom-tag"><span class="text-custom-white rectangle-tag bg-gradient-red">10%</span></div>
+                    </div>
+                </div>-->
+            </div>
+            <div class="product-caption">
+                <div class="title-box">
+                    <h6 class="product-title"><a href="#" class="text-light-black ">{{ search.spotname }}</a></h6>
+                    <div class="tags"><span class="text-custom-white rectangle-tag bg-yellow">{{ search.number }}</span></div>
+                </div>
+                <p class="text-light-white">{{ search.email }}</p>
+                <div class="product-details">
+                    <div class="price-time"><span class="text-light-black time">30-40 min</span>
+                        <span class="text-light-white price"><strong>connect with us and get the best sharwama package</strong></span>
+                    </div>
+                </div>
+                <div class="product-footer"><span class="text-custom-white square-tag">
+                    <img src="{% static 'spotlocator/assets/img/svg/004-leaf.svg' %}" alt="tag"></span>
+                    <span class="text-custom-white square-tag">
+                        <img src="{% static 'spotlocator/assets/img/svg/006-chili.svg' %}" alt="tag">
+                    </span>
+                    <span class="text-custom-white square-tag">
+                        <img src="{% static 'spotlocator/assets/img/svg/005-chef.svg' %}" alt="tag">
+                    </span>
+                    <span class="text-custom-white square-tag">
+                        <img src="{% static 'spotlocator/assets/img/svg/008-protein.svg' %}" alt="tag">
+                    </span>
+                    <span class="text-custom-white square-tag">
+                        <img src="{% static 'spotlocator/assets/img/svg/009-lemon.svg' %}" alt="tag">
+                    </span>
+                </div>
+            </div>
+        </div></a>
+
+    </div>
+
+    {% endfor %}
+{% endif %}

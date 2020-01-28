@@ -1,0 +1,72 @@
+{% extends 'spotlocator/base_owner.html' %}
+{% load static %}
+{% block body %}
+    <!--Profile Data's --->
+
+    <section class="ex-collection section-padding bg-light-theme">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="product-box mb-xl-20">
+                        {% include 'spotlocator/logo_details.html' %}
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card">
+                      <div class="card-header">
+                        <!--the table head display here. -->
+                          <div class="table-responsive-sm">
+                              <table class="table table-striped">
+                                <thead class="thead-dark">
+                                  <tr>
+                                      <th><strong>Order Name</strong></th>
+                                      <th><strong>Order Price</strong></th>
+                                      <th><strong>Ingredients Included</strong></th>
+                                      <th><strong>Ingredients Excluded</strong></th>
+                                      <th><strong>Order Pics</strong></th>
+                                  </tr>
+                                </thead>
+                          <!--closing of the head tag--->
+                                <tbody>
+                                {% if menus %}
+                                    {% for menu in menus %}
+                                          <tr class="table-light text-uppercase">
+                                              <td><i>{{ menu.order_name }}</i></td>
+                                              <td>{{ menu.order_price }}</td>
+                                              <td><i>{{ menu.content }}</i></td>
+                                              <td><i>{{ menu.excludes }}</i></td>
+                                              <td><i>{{ menu.order_upload}}</i></td>
+                                          </tr>
+                                     {% endfor %}
+                                {% endif %}
+                                </tbody>
+                              </table>
+                           <a href="#" class="btn btn-outline-danger">CONNECT WITH US</a>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <a href="#">
+                            <img src="{{ user.logo.url }}" class="img-fluid full-width" alt="product-img">
+                        </a>
+                        <div class="card-body">
+                            <p><strong><i>Dear customer, we value your satisfaction
+                            above others <b>CONNECT</b>with us today via <b>WHATSAPP</b>by clicking
+                            the giant button.</i></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+
+
+
+
+

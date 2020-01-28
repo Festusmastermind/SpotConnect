@@ -1,0 +1,66 @@
+{% extends 'spotlocator/base_owner.html' %}
+{% load static %}
+{% block body %}
+    <section class="ex-collection section-padding bg-light-theme">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                    <div class="product-box mb-xl-20">
+                        {% include 'spotlocator/logo_details.html' %}
+                    </div>
+                </div>
+                <div class="col-md 8">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="login-sec">
+                          <div class="login-box">
+                            <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                              <h4 class="text-light-black fw-600 text-center"><strong>Create <i>Menu</i>List</h4><hr></strong>
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="form-group">
+                                    <label for="{{ form.order_name.id_for_label }}" class="text-light-white fs-14">Order name</label>
+                                    {{ form.order_name }}
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="{{ form.order_price.id_for_label }}" class="text-light-white fs-14">Order Price</label>
+                                    {{ form.order_price }}
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="{{ form.content.id_for_label }}" class="text-light-white fs-14">Order Contents</label>
+                                    {{ form.content }}
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="{{ form.excludes.id_for_label }}" class="text-light-white fs-14">Order Excludes</label>
+                                    {{ form.excludes }}
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="{{ form.order_upload.id_for_label }}" class="text-light-white fs-14">Order Upload</label>
+                                    {{ form.order_upload }}
+                                  </div>
+                                  <div class="form-group">
+                                    <button type="submit" class="btn-second btn-submit full-width">
+                                        <img src="{% static 'spotlocator/assets/img/M.png' %}" alt="btn logo"><strong>Create Menu</strong>
+                                    </button>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </form>
+                            <a href="{% url 'menu_list' %}" class="btn-second btn-submit full-width">
+                              <img src="{% static 'spotlocator/assets/img/M.png' %}" alt="btn logo"><strong>View MenuList</strong>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+        <!-- footer -->
+

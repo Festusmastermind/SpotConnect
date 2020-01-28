@@ -1,0 +1,39 @@
+{% load static %}
+<div class="product-img">
+    <a href="#"><img src="{{ user.logo.url }}" class="img-logo full-width" alt="product-img"></a>
+    <div class="overlay">
+        <div class="product-tags padding-10">
+            <span class="circle-tag">
+                <img src="{% static 'spotlocator/assets/img/svg/013-heart-1.svg' %}" alt="tag">
+            </span>
+            <div class="custom-tag"><span class="text-custom-white rectangle-tag bg-gradient-red">10%</span></div>
+        </div>
+    </div>
+</div>
+    <div class="product-caption">
+        <div class="title-box">
+            <h6 class="product-title"><a href="#" class="text-light-black ">{{ user.spotname }}</a></h6>
+            <div class="tags"><span class="text-custom-white rectangle-tag bg-yellow">{{ user.number }}</span></div>
+        </div>
+        <p class="text-light-white">{{ user.email }}</p>
+        <div class="product-details">
+            <div class="price-time"><span class="text-light-black time">30-40 min</span>
+                <span class="text-light-white price"><strong>connect with us and get the best sharwama package</strong></span>
+            </div>
+        </div>
+        <div class="product-footer"><span class="text-custom-white square-tag">
+            <img src="{% static 'spotlocator/assets/img/svg/004-leaf.svg' %}" alt="tag"></span>
+            <span class="text-custom-white square-tag">
+                  <img src="{% static 'spotlocator/assets/img/svg/006-chili.svg' %}" alt="tag">
+            </span>
+            <span class="text-custom-white square-tag">
+                <img src="{% static 'spotlocator/assets/img/svg/005-chef.svg' %}" alt="tag">
+            </span>
+            <span class="text-custom-white square-tag">
+                  <img src="{% static 'spotlocator/assets/img/svg/008-protein.svg' %}" alt="tag">
+            </span>
+            <span class="text-custom-white square-tag">
+                  <img src="{% static 'spotlocator/assets/img/svg/009-lemon.svg' %}" alt="tag">
+            </span>
+        </div>
+    </div>
